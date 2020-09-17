@@ -337,9 +337,9 @@ def handle_proxy(proxy_param_name='proxy', checkbox_default_value=False, handle_
         Handle logic for routing traffic through the system proxy.
         Should usually be called at the beginning of the integration, depending on proxy checkbox state.
 
-        Additionally will unset env variables REQUESTS_CA_BUNDLE and CURL_CA_BUNDLE if handle_insecure is speficied (default).
+        Additionally will unset env variables REQUESTS_CA_BUNDLE and CURL_CA_BUNDLE if handle_insecure is specified (default).
         This is needed as when these variables are set and a requests.Session object is used, requests will ignore the
-        Sesssion.verify setting. See: https://github.com/psf/requests/blob/master/requests/sessions.py#L703
+        Session.verify setting. See: https://github.com/psf/requests/blob/master/requests/sessions.py#L703
 
         :type proxy_param_name: ``string``
         :param proxy_param_name: name of the "use system proxy" integration parameter
@@ -736,7 +736,7 @@ def FormatADTimestamp(ts):
        :type ts: ``int``
        :param ts: The timestamp to be formatted (required)
 
-       :return: A string represeting the time
+       :return: A string representing the time
        :rtype: ``str``
     """
     return (datetime(year=1601, month=1, day=1) + timedelta(seconds=int(ts) / 10 ** 7)).ctime()
@@ -749,7 +749,7 @@ def PrettifyCompactedTimestamp(x):
        :type x: ``str``
        :param x: The timestamp to be formatted (required)
 
-       :return: A string represeting the time
+       :return: A string representing the time
        :rtype: ``str``
     """
     return '%s-%s-%sT%s:%s:%s' % (x[:4], x[4:6], x[6:8], x[8:10], x[10:12], x[12:])
@@ -1014,7 +1014,7 @@ class IntegrationLogger(object):
 
     def set_buffering(self, state):
         """
-        set whether the logger buffers messages or writes staight to the demisto log
+        set whether the logger buffers messages or writes straight to the demisto log
 
         :param state: True/False
         :type state: boolean
@@ -1108,7 +1108,7 @@ def logger(func):
 
 def formatCell(data, is_pretty=True):
     """
-       Convert a given object to md while decending multiple levels
+       Convert a given object to md while descending multiple levels
 
        :type data: ``str`` or ``list``
        :param data: The cell content (required)
@@ -1135,7 +1135,7 @@ def flattenCell(data, is_pretty=True):
        :param data: The cell content (required)
 
        :type is_pretty: ``bool``
-       :param is_pretty: Should cell content be pretified (default is True)
+       :param is_pretty: Should cell content be prettified (default is True)
 
        :return: A sting representation of the cell content
        :rtype: ``str``
@@ -1205,7 +1205,7 @@ def argToBoolean(value):
         :param value: the value to evaluate
         :type value: ``string|bool``
 
-        :return: a boolean representatation of 'value'
+        :return: a boolean representation of 'value'
         :rtype: ``bool``
     """
     if isinstance(value, bool):
@@ -1317,7 +1317,7 @@ def tableToMarkdown(name, t, headers=None, headerTransform=None, removeNull=Fals
         headers = [headers]
 
     if not isinstance(t[0], dict):
-        # the table cotains only simple objects (strings, numbers)
+        # the table contains only simple objects (strings, numbers)
         # should be only one header
         if headers and len(headers) > 0:
             header = headers[0]
@@ -3799,7 +3799,7 @@ def dict_safe_get(dict_object, keys, default_return_value = None):
     :param keys: keys for recursive get.
 
     :type default_return_value: ``object``
-    :param default_return_value: Value to return when no key availble.
+    :param default_return_value: Value to return when no key available.
 
     :rtype: ``object``
     :return:: Value found.
