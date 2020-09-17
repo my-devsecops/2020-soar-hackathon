@@ -13,7 +13,7 @@ def check_logging(caplog):
     Fixture validates that the python logger doesn't contain any warnings (or up) messages
 
     If your test fails and it is ok to have such messages then you can clear the log at the end of your test
-    By callign: caplog.clear()
+    By calling: caplog.clear()
 
     For example:
 
