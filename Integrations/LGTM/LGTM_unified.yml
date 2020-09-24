@@ -344,7 +344,6 @@ script:
         project_id = args.get('project_id')
 
         if analysis_id:
-            print ('analysis id')
             search_query = '/analyses/' + str(analysis_id)
             title = f'{INTEGRATION_NAME} - Code Analysis Status'
             raws = []
@@ -361,8 +360,6 @@ script:
             return [human_readable, {"LGTM.Analysis(val.id == obj.id)": analysis_ec}, raws]
 
         elif commit_id and project_id:
-            print ('commit id')
-
             search_query = '/analyses/' + str(project_id) + '/commits/' + str(commit_id)
             title = f'{INTEGRATION_NAME} - Code Analysis Status'
             raws = []
